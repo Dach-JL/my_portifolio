@@ -9,9 +9,9 @@ export const Quote: React.FC = () => {
         <div className="absolute -top-4 left-6 bg-[#282C33] px-2 text-[#ABB2BF]">
            <svg width="42" height="29" viewBox="0 0 42 29" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.9231 0V11.2308H0V29H18.0769V11.2308H9.03846L12.9231 0ZM36.8462 0V11.2308H23.9231V29H42V11.2308H32.9615L36.8462 0Z" fill="#ABB2BF"/>
-           </svg>
+           </svg>s
         </div>
-        <p className="font-mono">With great power comes great electricity bill</p>
+        <p className="font-mono">With great power comes great electricity bill!</p>
         
         <div className="absolute -bottom-4 right-10 bg-[#282C33] px-2 text-[#ABB2BF]">
            <svg width="42" height="29" viewBox="0 0 42 29" fill="none" xmlns="http://www.w3.org/2000/svg">
