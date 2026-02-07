@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 
 export const Header: React.FC = () => {
-  const [lang, setLang] = useState('EN');
+
 
   return (
     <header className="flex justify-between items-center py-8 bg-[#282C33] sticky top-0 z-50">
@@ -22,18 +22,7 @@ export const Header: React.FC = () => {
         <a href="#about-me" className="hover:text-white transition-colors"><span className="text-[#C778DD]">#</span>about-me</a>
         <a href="#contacts" className="hover:text-white transition-colors"><span className="text-[#C778DD]">#</span>contacts</a>
         
-        <div className="relative group ml-4 cursor-pointer">
-          <div className="flex items-center gap-1 hover:text-white">
-            <span>{lang}</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L9 1" stroke="#ABB2BF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <div className="absolute top-full right-0 bg-[#282C33] border border-[#ABB2BF] py-2 px-4 hidden group-hover:block w-20 mt-1">
-            <div onClick={() => setLang('RU')} className="hover:text-white mb-2">RU</div>
-            <div onClick={() => setLang('EN')} className="hover:text-white">EN</div>
-          </div>
-        </div>
+
       </nav>
 
       {/* Mobile Menu Icon */}
