@@ -7,7 +7,7 @@ import {
   SiSqlite,
   SiPostgresql,
   SiMongodb,
-  SiVscodium, // Using VSCodium since VSCode might not be available
+  SiVscodium,
   SiNeovim,
   SiLinux,
   SiFigma,
@@ -21,7 +21,7 @@ import {
   SiNestjs,
   SiFlask,
   SiExpress,
-  SiRunkit, // Using Runkit as a substitute for REST API
+  SiRunkit,
   SiJinja,
   SiArchlinux
 } from 'react-icons/si';
@@ -32,7 +32,56 @@ interface SkillIconProps {
 }
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, size = 24 }) => {
-  const iconProps = { size: size, className: "text-[#ABB2BF] hover:text-white transition-colors" };
+  // Define official brand colors for each technology
+  const getBrandColor = (skillName: string) => {
+    switch(skillName.toLowerCase()) {
+      // Languages
+      case 'typescript': return '#3178C6'; // Official TypeScript blue
+      case 'python': return '#3776AB'; // Official Python blue
+      case 'javascript': return '#F7DF1E'; // Official JavaScript yellow
+      
+      // Databases
+      case 'sqlite': return '#003B57'; // Official SQLite blue
+      case 'postgresql': return '#336791'; // Official PostgreSQL blue
+      case 'mongo': return '#47A248'; // Official MongoDB green
+      
+      // Tools
+      case 'vscode': return '#007ACC'; // Official VSCode blue
+      case 'neovim': return '#57A143'; // Official Neovim green
+      case 'linux': return '#FCC624'; // Official Linux orange
+      case 'figma': return '#F24E1E'; // Official Figma red
+      case 'xfce': return '#2284F2'; // XFCE blue
+      case 'arch': return '#1793D1'; // Official Arch Linux cyan
+      case 'git': return '#F05032'; // Official Git red
+      case 'font awesome': return '#528DD7'; // Font Awesome blue
+      
+      // Other
+      case 'html': return '#E34F26'; // Official HTML orange
+      case 'css': return '#1572B6'; // Official CSS blue
+      case 'ejs': return '#CB2027'; // EJS red (using red)
+      case 'scss': return '#CC6699'; // Official Sass pink
+      case 'rest': return '#FF6B00'; // Generic REST API orange
+      case 'jinja': return '#B41717'; // Jinja red
+      
+      // Frameworks
+      case 'react': return '#61DAFB'; // Official React blue
+      case 'vue': return '#4FC08D'; // Official Vue green
+      case 'next.js': return '#000000'; // Official Next.js black
+      case 'nestjs': return '#E0234E'; // Official NestJS red
+      case 'disnake': return '#5865F2'; // Discord.js purple (Discord color)
+      case 'discord.js': return '#5865F2'; // Official Discord purple
+      case 'flask': return '#000000'; // Official Flask black
+      case 'express.js': return '#000000'; // Official Express black
+      
+      default: return '#ABB2BF'; // Default color
+    }
+  };
+
+  const iconProps = { 
+    size: size, 
+    color: getBrandColor(skill),
+    className: "hover:brightness-125 transition-all duration-200 cursor-pointer" 
+  };
   
   switch(skill.toLowerCase()) {
     // Languages
@@ -46,7 +95,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, size = 24 }) => {
     case 'mongo': return <SiMongodb {...iconProps} />;
     
     // Tools
-    case 'vscode': return <SiVscodium {...iconProps} />; // Using VSCodium as substitute
+    case 'vscode': return <SiVscodium {...iconProps} />;
     case 'neovim': return <SiNeovim {...iconProps} />;
     case 'linux': return <SiLinux {...iconProps} />;
     case 'figma': return <SiFigma {...iconProps} />;
