@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Decoration } from './Decoration';
 
@@ -7,10 +6,10 @@ export const Hero: React.FC = () => {
     <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-12 md:mt-20">
       <div className="max-w-xl">
         <h1 className="text-3xl md:text-4xl font-semibold text-white leading-tight mb-8">
-          Dedecho is a <span className="text-[#C778DD]">web designer</span> and <span className="text-[#C778DD]">front-end developer</span>
+          Dedecho is a <span className="text-[#C778DD]">full-stack developer</span> specializing in <span className="text-[#C778DD]">modern web technologies</span>
         </h1>
         <p className="text-[#ABB2BF] mb-8 text-lg">
-          He crafts responsive websites where technologies meet creativity
+          Transforming ideas into interactive experiences using React, TypeScript, and cutting-edge web technologies
         </p>
         <button className="border border-[#C778DD] text-white px-6 py-2 font-medium hover:bg-[#C778DD]/10 transition-all">
           Contact me!!
